@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 # CRUD
 # Create, Read, Update, Delete
+# Tabela: Tarefa
 
 tasks = []
 task_id_control = 1
@@ -63,7 +64,7 @@ def delete_task(id):
             task = t
             break
     
-    if task == None:
+    if  not task:
         return jsonify({'message': 'Não foi possível encontrar a atividade'}), 404
     
     tasks.remove(task)
